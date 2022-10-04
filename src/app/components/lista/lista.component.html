@@ -1,0 +1,10 @@
+<div *ngFor="let item of categorias; let i = index">
+  <ion-item>
+    <ion-label>{{item.nombre}}</ion-label>
+  </ion-item>
+  <br>
+    <ul *ngFor="let producto of item.productos">
+      <li>{{producto.nombre}}  ${{producto.precio}}</li>
+    </ul>
+    <ion-button expand="block" color="success" (click)="openModal(item)">Pedir</ion-button>
+</div>

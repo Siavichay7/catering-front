@@ -1,0 +1,14 @@
+<ion-content [fullscreen]="true" mode="ios">
+  <ion-header collapse="condense"  mode="ios">
+    <ion-toolbar  mode="ios">
+      <ion-title  mode="ios" size="large">Catering</ion-title>
+    </ion-toolbar>
+  </ion-header>
+ 
+  <div id="container">
+    <div class="image">
+    </div>
+    <img src="../../assets/icon/fondo.jpg" alt="">
+    <app-lista *ngIf="categorias.length != 0" [categorias]="categorias"></app-lista>
+  </div>
+</ion-content>

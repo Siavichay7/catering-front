@@ -1,0 +1,53 @@
+<!-- <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+  <ng-template> -->
+    <ion-header mode="ios">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button color="dark" (click)="cancel()">Cancelar</ion-button>
+        </ion-buttons>
+        <ion-title>Detalle del pedido</ion-title>
+        <ion-buttons slot="end">
+          <ion-button color="dark" (click)="confirm()" [strong]="true">Confirmar</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <form [formGroup]="form" >
+
+        <h4>Agregar cliente</h4>
+        <ion-item>
+          <ion-label position="stacked">Nombre: </ion-label>
+          <ion-input formControlName="nombre" type="text" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Correo</ion-label>
+          <ion-input formControlName="correo" type="mail" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Teléfono</ion-label>
+          <ion-input formControlName="telefono" type="number" ></ion-input>
+        </ion-item>
+        <h4>Datos del pedido</h4>
+        <ion-item>
+          <ion-label position="stacked">Ingresa cantidad de adultos</ion-label>
+          <ion-input formControlName="cantidadAdulto" type="number" placeholder="Cantidad" (ionChange)="cantidadAdultos($event)"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Ingresa cantidad de niños</ion-label>
+          <ion-input formControlName="cantidadNino" type="number" placeholder="Cantidad" (ionChange)="cantidadNino($event)"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-select (ionChange)="seleccionado($event)" mode="ios" formControlName="adicional" placeholder="Selecciona los costos adicionales (opcional)" [multiple]="true">
+            <ion-select-option value="1">Costo por entrega a domicilio</ion-select-option>
+            <ion-select-option value="2">Costo por mantelería y decoración</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <strong>Descuento: {{descuento}}%</strong>
+        </ion-item>
+        <ion-item>
+          <strong>TOTAL: {{form.get('total')?.value }}</strong>
+        </ion-item>
+      </form>
+      
+    </ion-content>
